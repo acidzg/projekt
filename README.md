@@ -1,4 +1,1 @@
-projekt
-=======
-
-projekt na zaliczenie inzynierii 
+Trolololo
