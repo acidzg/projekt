@@ -1,0 +1,4 @@
+inFilePath = logs.txt
+outDatabaseLogin = login
+outDatabasePass = pass
+outDatabaseAddress = http://adres.pl
