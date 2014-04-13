@@ -8,6 +8,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 	}
 
 	public boolean storeEvents(List<Event> batch) {
+		// to do
 		return false;
 	}
 }
