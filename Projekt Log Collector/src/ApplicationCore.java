@@ -11,13 +11,13 @@ public class ApplicationCore {
 	private OutputDatabaseAdapter outputDatabaseAdapter;
 
 	public ApplicationCore() {
-		this.configuration = readAndCreateConfiguration();
-		this.queue = new QueueManager(this.outputDatabaseAdapter);
-		this.queue.start();
-		this.inputFileAdapter = new InputFileAdapter();
-		this.inputFileAdapter.start();
-		this.inputFileAdapter.connectToQueueManager(this.queue);
-		this.outputDatabaseAdapter = new OutputDatabaseAdapter();
+		configuration = readAndCreateConfiguration();
+		queue = new QueueManager(outputDatabaseAdapter);
+		queue.start();
+		inputFileAdapter = new InputFileAdapter();
+		inputFileAdapter.start();
+		inputFileAdapter.connectToQueueManager(queue);
+		outputDatabaseAdapter = new OutputDatabaseAdapter();
 	}
 
 	private Configuration readAndCreateConfiguration() {
