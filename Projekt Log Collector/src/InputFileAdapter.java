@@ -1,4 +1,4 @@
-import java.io.PrintStream;
+
 
 public class InputFileAdapter extends Thread implements InputAdapter {
 	private Configuration configuration;
@@ -21,7 +21,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 
 	private void sendEvent() {
 		Event event = createEvent();
-		this.queue.acceptEvent(event);
+		queue.acceptEvent(event);
 		System.out.println("Dodano nowy event");
 	}
 
