@@ -16,6 +16,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	}
 
 	private Event createEvent() {
+		// tutaj bedzie tworzony event z zczytanego pliku 
 		return new Event();
 	}
 
