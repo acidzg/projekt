@@ -5,13 +5,13 @@ public class Configuration
   
   public Configuration()
   {
-    this.inConf = new InputConfiguration();
-    this.outConf = new OutputConfiguration();
+    inConf = new InputConfiguration();
+    outConf = new OutputConfiguration();
   }
   
   public Configuration(String inFilePath, String outDatabaseLogin, String outDatabasePass, String outDatabaseAddress)
   {
-    this.inConf = new InputConfiguration(inFilePath);
-    this.outConf = new OutputConfiguration(outDatabaseLogin, outDatabasePass, outDatabaseAddress);
+    inConf = new InputConfiguration(inFilePath);
+    outConf = new OutputConfiguration(outDatabaseLogin, outDatabasePass, outDatabaseAddress);
   }
 }
