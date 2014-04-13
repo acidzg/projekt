@@ -25,7 +25,7 @@ public class QueueManager extends Thread {
 	boolean sendEvents() {
 		List<Event> batch = new LinkedList<Event>();
 		for (int i = 0; i < eventsQueue.size(); i++) {
-			batch.add((Event) eventsQueue.remove());
+			batch.add(eventsQueue.remove());
 		}
 		/*
 		if(batch.size()>0)
