@@ -4,7 +4,7 @@ public class InputConfiguration
   
   public InputConfiguration()
   {
-    this.FilePath = "logs.txt";
+    FilePath = "logs.txt";
   }
   
   public InputConfiguration(String FilePath)
