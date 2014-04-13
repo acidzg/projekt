@@ -9,8 +9,7 @@ public class OutputConfiguration {
 		this.databaseAddress = "";
 	}
 
-	public OutputConfiguration(String databaseLogin, String databasePass,
-			String databaseAddress) {
+	public OutputConfiguration(String databaseLogin, String databasePass, String databaseAddress) {
 		this.databaseLogin = databaseLogin;
 		this.databasePass = databasePass;
 		this.databaseAddress = databaseAddress;
