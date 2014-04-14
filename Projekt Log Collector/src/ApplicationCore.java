@@ -12,12 +12,12 @@ public class ApplicationCore {
 
 	public ApplicationCore() {
 		configuration = readAndCreateConfiguration();
+		outputDatabaseAdapter = new OutputDatabaseAdapter();
 		queue = new QueueManager(outputDatabaseAdapter);
 		queue.start();
 		inputFileAdapter = new InputFileAdapter();
 		inputFileAdapter.start();
 		inputFileAdapter.connectToQueueManager(queue);
-		outputDatabaseAdapter = new OutputDatabaseAdapter();
 	}
 
 	private Configuration readAndCreateConfiguration() {

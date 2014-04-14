@@ -23,15 +23,15 @@ public class QueueManager extends Thread {
 	}
 
 	boolean sendEvents() {
-		List<Event> batch = new LinkedList<Event>();
-		for (int i = 0; i < eventsQueue.size(); i++) {
-			batch.add(eventsQueue.remove());
-		}
-		/*
-		if(batch.size()>0)
+		List<Event> batch = new LinkedList<Event>(eventsQueue);
+		eventsQueue.clear();
+
+		if(batch.size()>0){
 			outputAdapter.storeEvents(batch);
-		*/
-		System.out.println("Wyslano do zapisu " + batch.size() + " eventow");
+			System.out.println("Wyslano do zapisu " + batch.size() + " eventow");
+		}
+	
+		
 		return true;
 	}
 
