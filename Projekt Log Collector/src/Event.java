@@ -9,7 +9,7 @@ public class Event {
 	public Event() {
 		this.timestamp = new Timestamp(0);
 		this.logLevel = Level.WARNING;
-		this.details = "Test  event";
+		this.details = "Test event";
 	}
 
 	public Event(Timestamp timestamp, Level logLevel, String details) {
