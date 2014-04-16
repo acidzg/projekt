@@ -18,7 +18,7 @@ public class ApplicationCore {
 		inputFileAdapter = new InputFileAdapter();
 		inputFileAdapter.start();
 		inputFileAdapter.connectToQueueManager(queue);
-	}
+	} 
 
 	private Configuration readAndCreateConfiguration() {
 		Properties properties = readConfigurationFromFile();

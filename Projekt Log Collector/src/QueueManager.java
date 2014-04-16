@@ -30,7 +30,6 @@ public class QueueManager extends Thread {
 			outputAdapter.storeEvents(batch);
 			System.out.println("Wyslano do zapisu " + batch.size() + " eventow");
 		}
-	
 		
 		return true;
 	}
