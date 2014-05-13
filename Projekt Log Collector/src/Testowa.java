@@ -6,4 +6,5 @@ public class Testowa {
 	//wasil
 	//krzysiek
 	//jezus
+	//banann
 }
