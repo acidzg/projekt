@@ -5,4 +5,5 @@ public class Testowa {
 	//adams
 	//wasil
 	//krzysiek
+	//jezus
 }
