@@ -8,4 +8,5 @@ public class Testowa {
 	//jezus
 	//banann
 	//ko≈Çek
+	//so≥tys
 }
