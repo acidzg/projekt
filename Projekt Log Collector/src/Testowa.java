@@ -7,4 +7,5 @@ public class Testowa {
 	//krzysiek
 	//jezus
 	//banann
+	//kołek
 }
