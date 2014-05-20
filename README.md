@@ -6,18 +6,18 @@
 4. PMD for Eclipse : http://pmd.sourceforge.net/eclipse/
 5. Checkstyle for Eclipse : http://eclipse-cs.sourceforge.net/downloads.html
 
-PRZYDZIAŁ ZADAŃ:
-Realizacja Adaptera 1:
-  Michał Wasilewski
+<p>PRZYDZIAŁ ZADAŃ:</p><br>
+<p>Realizacja Adaptera 1:</p>
+  <ul><li>Michał Wasilewski</ul>
 
-Rdzeń aplikacji:
-  Mateusz Czaja
-  Adam Pankowski
-
-Realizacja Adapter 3 + baza danych:
-  Damian Kołtan (wsparcie)
-  Emil Kwaśniewski
-  Marcin Adamski
+<br><p>Rdzeń aplikacji:</p>
+  <ul><li>Mateusz Czaja
+  <li>Adam Pankowski</ul>
   
-Wraz z postępem pracy bądź problemami przydział zadań może ulegać zmianie. 
-Gdyby pojawiały sie jakieś problemy, wrzucajcie je tutaj w kategorii "Issues", tak by inni mogli pomóc.
+<br><p>Realizacja Adapter 3 + baza danych:</p>
+  <ul><li>Damian Kołtan (wsparcie)
+  <li>Emil Kwaśniewski
+  <li>Marcin Adamski</ul>
+  
+<br><p>Wraz z postępem pracy bądź problemami przydział zadań może ulegać zmianie. 
+Gdyby pojawiały sie jakieś problemy, wrzucajcie je tutaj w kategorii "Issues", tak by inni mogli pomóc.</p>
