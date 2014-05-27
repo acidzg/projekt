@@ -69,7 +69,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 					return new Event(timestamp,realLevel,details);
 				}
 				
-				 
+				  
   
 				// *********
  
