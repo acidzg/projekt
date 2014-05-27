@@ -70,7 +70,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 				}
 				
 				
- 
+  
 				// *********
  
 			}
