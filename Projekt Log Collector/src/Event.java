@@ -17,4 +17,13 @@ public class Event {
 		this.logLevel = logLevel;
 		this.details = details;
 	}
+	
+	public boolean isEmpty() {
+		if(timestamp.equals(new Timestamp(0))) return true;
+		else return false;
+	}
+	
+	public void showEvent() {
+		System.out.println(timestamp+" "+logLevel+" "+details);
+	}
 }
