@@ -17,7 +17,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 		this.queue = queue;
 	}
 
-	private Event readFile() {
+	private void readFile() {
 		try {
 			FileInputStream fileInputStream = new FileInputStream(
 					"server.log.1");
@@ -30,9 +30,8 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 				// *********
 
 				if (!line.isEmpty()) {
-					String a = line;
 					String regularExp = "(\\))(.+)";
-					String date = a.replaceAll(regularExp, "$1");
+					String date = line.replaceAll(regularExp, "$1");
 
 					String regularExp2 = "(\\()(.+)(\\))";
 
@@ -65,11 +64,14 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 					
 					String regularExpDetails = "(.+)(INFO|WARNING|SEVERE|CONFIG|FINE|FINER|FINEST)(.+)";
 					String details = line.replaceAll(regularExpDetails, "$3"); 
+					
+					Event event = new Event(timestamp,realLevel,details);
+				
+					sendEvent(event);
 
-					return new Event(timestamp,realLevel,details);
 				}
 				
-				 
+				  
   
 				// *********
  
@@ -81,16 +83,16 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new Event();
 
 	}
 
 	private Event createEvent() {		
-		return readFile();
+
+		return new Event();
 	}
 
-	private void sendEvent() {
-		Event event = createEvent();
+	private void sendEvent(Event pEvent) {
+		Event event = pEvent;
 		if(!event.isEmpty()) {
 			queue.acceptEvent(event);
 			System.out.println("Dodano nowy event:");
@@ -105,7 +107,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			sendEvent();
+			readFile();
 		}
 	}
 }
