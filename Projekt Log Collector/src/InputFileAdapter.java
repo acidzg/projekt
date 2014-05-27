@@ -72,7 +72,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 				
 
 				// *********
-
+ 
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
