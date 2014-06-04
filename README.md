@@ -19,5 +19,10 @@
   <li>Emil Kwaśniewski
   <li>Marcin Adamski</ul>
   
+<p>Przydział testerów:</p>
+  <ul><li>Krzysztof Bahyrycz - rdzeń aplikacji
+  <li>Kamil Skrobania - adapter 3
+  <li>Piotr Jarmoch - adapter 1</ul>
+  
 <p>Wraz z postępem pracy bądź problemami przydział zadań może ulegać zmianie. 
 Gdyby pojawiały sie jakieś problemy, wrzucajcie je tutaj w kategorii "Issues", tak by inni mogli pomóc.</p>
