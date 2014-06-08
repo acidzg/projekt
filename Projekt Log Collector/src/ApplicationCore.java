@@ -18,6 +18,8 @@ public class ApplicationCore {
 		inputFileAdapter = new InputFileAdapter();
 		inputFileAdapter.start();
 		inputFileAdapter.connectToQueueManager(queue);
+		outputDatabaseAdapter.setupConfig(configuration);
+		inputFileAdapter.setupConfig(configuration);
 	} 
 
 	private Configuration readAndCreateConfiguration() {
