@@ -55,8 +55,8 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 			e.printStackTrace();
 		}
 	}
-	public static void main(String args[]){
-		OutputDatabaseAdapter adapter = new OutputDatabaseAdapter("jdbc:mysql://mysql.cba.pl/projekt202_cba_pl", "acidzg","yamaha12");
-		adapter.openConnection();
-	}
+//	public static void main(String args[]){
+//		OutputDatabaseAdapter adapter = new OutputDatabaseAdapter("jdbc:mysql://mysql.cba.pl/projekt202_cba_pl", "acidzg","yamaha12");
+//		adapter.openConnection();
+//	}
 }
