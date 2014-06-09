@@ -12,7 +12,7 @@ public class ApplicationCore {
 
 	public ApplicationCore() {
 		configuration = readAndCreateConfiguration();
-		outputDatabaseAdapter = new OutputDatabaseAdapter();
+		//outputDatabaseAdapter = new OutputDatabaseAdapter();
 		queue = new QueueManager(outputDatabaseAdapter);
 		queue.start();
 		inputFileAdapter = new InputFileAdapter();
