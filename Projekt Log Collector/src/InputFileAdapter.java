@@ -5,12 +5,19 @@ import java.io.InputStreamReader;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
+import javax.swing.JTextArea;
+
 @SuppressWarnings("unused")
 public class InputFileAdapter extends Thread implements InputAdapter {
 	private Configuration configuration;
 	private QueueManager queue;
 	private BufferedReader bufferedReader;
+	JTextArea guiConsole;
 
+	public InputFileAdapter (JTextArea guiConsole)
+	{
+		this.guiConsole=guiConsole;
+	}
 	public void setupConfig(Configuration config) {
 		this.configuration = config;
 	}
@@ -38,7 +45,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 					String details = getDetailsFromLine(line);
 
 					Event event = new Event(timestamp, level, details);
-
+					this.guiConsole.append(timestamp +" "+ level +" "+ details + "\n");
 					sendEvent(event);
 
 				}
