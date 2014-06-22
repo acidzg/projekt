@@ -5,22 +5,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 public class OutputDatabaseAdapter implements OutputAdapter {
-	private Configuration configuration;
 	
+	private Configuration configuration;
 	private Connection connection = null;
 	// /statement does not appear
 	private Statement statement = null;
 	// /wynik zapytania sqlQuery
 	private ResultSet resultSet;
 	// /query of sql
-	private String databaseURL;
-	private String databaseUser;
-	private String databasePassword;
-	public OutputDatabaseAdapter(String url, String user, String password){
-		this.databaseURL = url;
-		this.databaseUser = user;
-		this.databasePassword = password;
-	}
+	
+	public OutputDatabaseAdapter() {}
+	
 	public void setupConfig(Configuration config) {
 		this.configuration = config; 
 	}
@@ -29,14 +24,17 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		return false;
 	}
 	
-	private void openConnection(){
+	public void openConnection(){ //chwilowo public byle tylko sprawdzic conf z pliku
 		try {
 			Class.forName("com.mysql.jdbc.Driver"); //loading mysql driver
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		try {
-			connection = DriverManager.getConnection(databaseURL, databaseUser, databasePassword); 
+			connection = DriverManager.getConnection(configuration.outConf.databaseAddress,
+					configuration.outConf.databaseLogin, configuration.outConf.databasePass); 
+//			connection = DriverManager.getConnection("jdbc:mysql://matuszak.net.pl",
+//					"matuszak_abc", "1qaz2wsx"); 
 			// getting connection to database
 		} catch (SQLException e) { 
 			e.printStackTrace();
@@ -46,7 +44,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("udalo sie");
+		System.out.println("nawiazano polaczenie z baza danych");
 	}
 	private void closeConnection(){
 		try {
@@ -56,7 +54,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		}
 	}
 //	public static void main(String args[]){
-//		OutputDatabaseAdapter adapter = new OutputDatabaseAdapter("jdbc:mysql://mysql.cba.pl/projekt202_cba_pl", "acidzg","yamaha12");
+//		OutputDatabaseAdapter adapter = new OutputDatabaseAdapter();
 //		adapter.openConnection();
 //	}
 }
