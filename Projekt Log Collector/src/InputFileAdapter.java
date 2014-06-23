@@ -34,7 +34,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 					fileInputStream));
 			String line;
 			while ((line = bufferedReader.readLine()) != null) {
-				sleep(1000);
+				sleep(5000);
 
 				// *********
 

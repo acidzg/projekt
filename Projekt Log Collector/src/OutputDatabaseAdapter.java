@@ -28,11 +28,16 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		boolean flag = false;
 		if (openConnection()) {
 			for (Event event : batch) {
-				flag = statement.execute(
-						"INSERT INTO Events VALUES (\'"
-						+ event.timestamp 
-						+ "\', \'" + event.loglevel + "\', \'"
-						+ event.details + "\');");
+				try {
+					flag = statement.execute(
+							"INSERT INTO Events VALUES (\'"
+							+ event.getTimestamp()
+							+ "\', \'" + event.getLogLevel() + "\', \'"
+							+ event.getDetails() + "\');");
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				if (!flag) {
 					break;
 				}
@@ -42,7 +47,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		return flag;
 	}
 
-	private boolean openConnection() {
+	public boolean openConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -68,7 +73,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		return false;
 	}
 
-	private void closeConnection() {
+	public void closeConnection() {
 		try {
 			connection.close(); // closing a current connection
 		} catch (SQLException e) {
@@ -79,4 +84,5 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 	// OutputDatabaseAdapter adapter = new OutputDatabaseAdapter();
 	// adapter.openConnection();
 	// }
+	
 }
