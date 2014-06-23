@@ -13,8 +13,10 @@ public class Application extends javax.swing.JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-		public static final int INPUT_SLEEP_TIME = 10_000;
-	public static final int OUTPUT_SLEEP_TIME = 5_000;
+		public static final int INPUT_SLEEP_TIME = 5_000;
+	public static final int OUTPUT_SLEEP_TIME = 10_000;
+	
+	private ApplicationCore appCore;
 
     /**
      * Creates new form LogCollectorGUI
@@ -31,19 +33,16 @@ public class Application extends javax.swing.JFrame {
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	
         startCollect = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         guiConsole = new javax.swing.JTextArea();
+        
+        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         startCollect.setText("Start");
-        startCollect.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                startCollectMouseClicked(evt);
-            }
-        });
         startCollect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startCollectActionPerformed(evt);
@@ -80,16 +79,11 @@ public class Application extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void startCollectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startCollectActionPerformed
-        // TODO add your handling code here:
-        new ApplicationCore(guiConsole);
+    	appCore = new ApplicationCore(guiConsole);
+ 
     }//GEN-LAST:event_startCollectActionPerformed
-
-    private void startCollectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startCollectMouseClicked
-        // TODO add your handling code here:
-        new ApplicationCore(guiConsole);
-    }//GEN-LAST:event_startCollectMouseClicked
 
     /**
      * @param args the command line arguments
@@ -121,7 +115,8 @@ public class Application extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Application().setVisible(true);
+            	Application app = new Application();
+                app.setVisible(true);
             }
         });
     }
