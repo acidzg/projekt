@@ -47,7 +47,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		return flag;
 	}
 
-	public boolean openConnection() {
+	private boolean openConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -73,7 +73,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		return false;
 	}
 
-	public void closeConnection() {
+	private void closeConnection() {
 		try {
 			connection.close(); // closing a current connection
 		} catch (SQLException e) {
