@@ -29,10 +29,10 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		if (openConnection()) {
 			for (Event event : batch) {
 				flag = statement.execute(
-						"INSERT INTO Events VALUES ("
-						+ event.timestamp
-						+ ", " + event.loglevel + ", "
-						+ event.details + ");");
+						"INSERT INTO Events VALUES (\'"
+						+ event.timestamp 
+						+ "\', \'" + event.loglevel + "\', \'"
+						+ event.details + "\');");
 				if (!flag) {
 					break;
 				}
