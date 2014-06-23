@@ -27,9 +27,7 @@ public class QueueManager extends Thread {
 		eventsQueue.clear();
 
 		if(batch.size()>0){
-			outputAdapter.openConnection();
 			outputAdapter.storeEvents(batch);
-			outputAdapter.closeConnection();
 			System.out.println("Wyslano do zapisu " + batch.size() + " eventow");
 		}
 		
