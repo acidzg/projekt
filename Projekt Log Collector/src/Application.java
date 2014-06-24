@@ -10,8 +10,8 @@
  */
 public class Application extends javax.swing.JFrame {
     private static final long serialVersionUID = 1L;
-    public static final int INPUT_SLEEP_TIME = 5_000;
-    public static final int OUTPUT_SLEEP_TIME = 10_000;
+    public static final int INPUT_SLEEP_TIME = 0;
+    public static final int OUTPUT_SLEEP_TIME = 5_000;
 	
 	private ApplicationCore appCore;
     /**

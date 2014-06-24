@@ -9,6 +9,8 @@ import javax.swing.JTextArea;
 
 @SuppressWarnings("unused")
 public class InputFileAdapter extends Thread implements InputAdapter {
+	
+	private static final int READ_FILE_SLEEP_TIME = 2_000;
 	private Configuration configuration;
 	private QueueManager queue;
 	private BufferedReader bufferedReader;
@@ -34,7 +36,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 					fileInputStream));
 			String line;
 			while ((line = bufferedReader.readLine()) != null) {
-				sleep(5000);
+				
 
 				// *********
 
@@ -51,6 +53,8 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 				}
 
 				// *********
+				
+				sleep(READ_FILE_SLEEP_TIME);
 
 			}
 		} catch (IOException e) {
