@@ -1,5 +1,7 @@
 import static org.junit.Assert.assertEquals;
 
+import java.sql.Timestamp;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,7 +14,6 @@ public class TestAppCore {
 	private Event event;
 	private QueueManager queue;
 	private OutputDatabaseAdapter outputDatabaseAdapter;
-
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -47,11 +48,21 @@ public class TestAppCore {
 		outputDatabaseAdapter = new OutputDatabaseAdapter();
 		queue = new QueueManager(outputDatabaseAdapter);
 
-		// test return value by function sendEvent from class QueueManager
+		// test return value by function sendEvents from class QueueManager
 		assertEquals(true, queue.sendEvents());
 	}
 	
-
+	//Test class Event
+	@Test
+	public void isEmpty()
+	{
+		event = new Event();
+		
+		//test return value by function isEmpty from class Event
+		assertEquals(true, event.isEmpty());
+		
+	}
+	
 
 	
 	
