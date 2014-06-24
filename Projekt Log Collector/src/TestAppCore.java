@@ -77,4 +77,13 @@ public class TestAppCore {
 		// test not Null returned value by function getLogLevel
 			assertNotNull(event.getLogLevel());
 	}
+	
+	@Test
+	public void getDetails()
+	{
+		event = new Event();
+		
+		// test not Null returned value by function getDetails
+		assertNotNull(event.getDetails());
+	}
 }
