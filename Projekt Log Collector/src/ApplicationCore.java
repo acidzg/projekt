@@ -8,8 +8,8 @@ import javax.swing.JTextArea;
 public class ApplicationCore {
 	private Configuration configuration;
 	private QueueManager queue;
-	private InputFileAdapter inputFileAdapter;
 	private OutputDatabaseAdapter outputDatabaseAdapter;
+	InputFileAdapter inputFileAdapter;
 
 	public ApplicationCore(JTextArea guiConsole) {
 		configuration = readAndCreateConfiguration();
