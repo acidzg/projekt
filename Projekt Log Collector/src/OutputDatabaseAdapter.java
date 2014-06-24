@@ -24,16 +24,18 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		this.configuration = config;
 	}
 
-	public final boolean storeEvents(final List<Event> batch) {
+	public synchronized final boolean storeEvents(final List<Event> batch) {
 		boolean flag = false;
 		if (openConnection()) {
 			for (Event event : batch) {
 				try {
 					flag = statement.execute(
-							"INSERT INTO Events VALUES (\'"
+							 
+							 "INSERT INTO project202idz.events(timestamp, level, details) VALUES (\'"
 							+ event.getTimestamp()
 							+ "\', \'" + event.getLogLevel() + "\', \'"
 							+ event.getDetails() + "\');");
+					
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

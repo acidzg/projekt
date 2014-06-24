@@ -1,4 +1,4 @@
 inFilePath = logs.txt
-outDatabaseLogin = matuszak_abc
-outDatabasePass = 1qaz2wsx
-outDatabaseAddress = jdbc:mysql://matuszak.net.pl
+outDatabaseLogin = padmin202
+outDatabasePass = 3c4a75
+outDatabaseAddress = jdbc:mysql://db4free.net
