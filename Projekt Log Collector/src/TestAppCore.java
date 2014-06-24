@@ -41,6 +41,15 @@ public class TestAppCore {
 		assertEquals(true, queue.acceptEvent(event));
 	}
 
+	@Test
+	public void sendEvent() {
+		event = new Event();
+		outputDatabaseAdapter = new OutputDatabaseAdapter();
+		queue = new QueueManager(outputDatabaseAdapter);
+
+		// test return value by function sendEvent from class QueueManager
+		assertEquals(true, queue.sendEvents());
+	}
 	
 
 
