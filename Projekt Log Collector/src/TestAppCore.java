@@ -1,6 +1,4 @@
-import static org.junit.Assert.assertEquals;
-
-import java.sql.Timestamp;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -51,20 +49,23 @@ public class TestAppCore {
 		// test return value by function sendEvents from class QueueManager
 		assertEquals(true, queue.sendEvents());
 	}
-	
-	//Test class Event
+
+	// Test class Event
 	@Test
-	public void isEmpty()
+	public void isEmpty() {
+		event = new Event();
+
+		// test return value by function isEmpty from class Event
+		assertEquals(true, event.isEmpty());
+
+	}
+
+	@Test
+	public void getTimestamp()
 	{
 		event = new Event();
 		
-		//test return value by function isEmpty from class Event
-		assertEquals(true, event.isEmpty());
-		
+		// test not Null returned value by function getTimestamp
+			assertNotNull(event.getTimestamp());
 	}
-	
-
-	
-	
-
 }
