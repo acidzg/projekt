@@ -11,6 +11,7 @@
 public class Application extends javax.swing.JFrame {
     private static final long serialVersionUID = 1L;
     public static final int INPUT_SLEEP_TIME = 0;
+	public static final int READ_FILE_SLEEP_TIME = 2_000;
     public static final int OUTPUT_SLEEP_TIME = 5_000;
 	
 	private ApplicationCore appCore;
@@ -91,7 +92,8 @@ public class Application extends javax.swing.JFrame {
         appCore = new ApplicationCore(guiConsole);
     }                                     
 
-    private void StopActionPerformed(java.awt.event.ActionEvent evt) {                                     
+    private void StopActionPerformed(java.awt.event.ActionEvent evt) {   
+    	appCore.stopApp();
         appCore = null;
     }                                    
 

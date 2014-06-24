@@ -22,6 +22,14 @@ public class ApplicationCore {
 		outputDatabaseAdapter.setupConfig(configuration);
 		inputFileAdapter.setupConfig(configuration);
 	} 
+	
+	public void stopApp() {
+		outputDatabaseAdapter = null;
+		queue.stop();
+		queue = null;
+		inputFileAdapter.stop();
+		inputFileAdapter = null;
+	}
 
 	private Configuration readAndCreateConfiguration() {
 		Properties properties = readConfigurationFromFile();
