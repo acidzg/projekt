@@ -68,4 +68,13 @@ public class TestAppCore {
 		// test not Null returned value by function getTimestamp
 			assertNotNull(event.getTimestamp());
 	}
+	
+	@Test
+	public void getLogLevel()
+	{
+		event = new Event();
+		
+		// test not Null returned value by function getLogLevel
+			assertNotNull(event.getLogLevel());
+	}
 }
