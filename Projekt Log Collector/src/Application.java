@@ -17,7 +17,7 @@ public class Application extends javax.swing.JFrame {
 	public static final int OUTPUT_SLEEP_TIME = 5_000;
 
     /**
-     * Creates new form LogCollectorGUI
+     * Tworzenie nowej formy z LogCollectorGUI
      */
     public Application() {
         initComponents();
