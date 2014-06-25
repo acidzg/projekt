@@ -65,7 +65,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	}
 
 	@SuppressWarnings("deprecation")
-	private Timestamp getDateFromline(String line) {
+	public Timestamp getDateFromline(String line) {
 		String regularExp = "(\\))(.+)";
 		String date = line.replaceAll(regularExp, "$1");
 
@@ -113,7 +113,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	 * @param
 	 * @return
 	 */ 
-	private String getDetailsFromLine(String line) {
+	public String getDetailsFromLine(String line) {
 		String regularExpDetails = "(.+)(INFO|WARNING|SEVERE|CONFIG|FINE|FINER|FINEST)(.+)";
 		return line.replaceAll(regularExpDetails, "$3");
 	}
