@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.List;
 public class OutputDatabaseAdapter implements OutputAdapter {
 	private Configuration configuration;
-	
+
 	private Connection connection = null;
 	// /statement does not appear
 	private Statement statement = null;
@@ -22,13 +22,13 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 		this.databasePassword = password;
 	}
 	public void setupConfig(Configuration config) {
-		this.configuration = config; 
+		this.configuration = config;
 	}
 	public boolean storeEvents(List<Event> batch) {
 		// to do
 		return false;
 	}
-	
+
 	private void openConnection(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver"); //loading mysql driver
@@ -36,9 +36,9 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 			e.printStackTrace();
 		}
 		try {
-			connection = DriverManager.getConnection(databaseURL, databaseUser, databasePassword); 
-			// getting connection to database
-		} catch (SQLException e) { 
+			connection = DriverManager.getConnection(databaseURL, databaseUser, databasePassword);
+			// otrzymywanie pol¹czenia
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		try {
@@ -50,10 +50,12 @@ public class OutputDatabaseAdapter implements OutputAdapter {
 	}
 	private void closeConnection(){
 		try {
-			connection.close(); //closing a current connection
+			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		/** klasa sluzy do zamykania obecnego pol¹czenia
+		 */
 	}
 //	public static void main(String args[]){
 //		OutputDatabaseAdapter adapter = new OutputDatabaseAdapter("jdbc:mysql://mysql.cba.pl/projekt202_cba_pl", "acidzg","yamaha12");
