@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<JDepend>
+    <Packages>
+
+        <Package name="Default">
+            <Stats>
+                <TotalClasses>15</TotalClasses>
+                <ConcreteClasses>13</ConcreteClasses>
+                <AbstractClasses>2</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>0</Ce>
+                <A>0.13</A>
+                <I>0</I>
+                <D>0.87</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="InputAdapter.java">
+                    InputAdapter
+                </Class>
+                <Class sourceFile="OutputAdapter.java">
+                    OutputAdapter
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="Application.java">
+                    Application
+                </Class>
+                <Class sourceFile="Application.java">
+                    Application$1
+                </Class>
+                <Class sourceFile="Application.java">
+                    Application$2
+                </Class>
+                <Class sourceFile="Application.java">
+                    Application$3
+                </Class>
+                <Class sourceFile="ApplicationCore.java">
+                    ApplicationCore
+                </Class>
+                <Class sourceFile="Configuration.java">
+                    Configuration
+                </Class>
+                <Class sourceFile="Event.java">
+                    Event
+                </Class>
+                <Class sourceFile="InputConfiguration.java">
+                    InputConfiguration
+                </Class>
+                <Class sourceFile="InputFileAdapter.java">
+                    InputFileAdapter
+                </Class>
+                <Class sourceFile="OutputConfiguration.java">
+                    OutputConfiguration
+                </Class>
+                <Class sourceFile="OutputDatabaseAdapter.java">
+                    OutputDatabaseAdapter
+                </Class>
+                <Class sourceFile="QueueManager.java">
+                    QueueManager
+                </Class>
+                <Class sourceFile="Testowa.java">
+                    Testowa
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+    </Packages>
+
+    <Cycles>
+    </Cycles>
+</JDepend>

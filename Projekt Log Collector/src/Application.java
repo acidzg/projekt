@@ -5,8 +5,11 @@
  */
 
 /**
- *
  * @author Ponury
+ */
+
+/**
+ * @author Chispet
  */
 public class Application extends javax.swing.JFrame {
     private static final long serialVersionUID = 1L;
@@ -16,7 +19,7 @@ public class Application extends javax.swing.JFrame {
 	
 	private ApplicationCore appCore;
     /**
-     * Creates new form NewJFrame
+     * Tworzenie nowej formy z NewJFrame
      */
     public Application() {
         initComponents();
