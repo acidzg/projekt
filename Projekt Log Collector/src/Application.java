@@ -8,6 +8,11 @@
  *
  * @author Ponury
  */
+/**
+ *
+ * @author Chispet
+ *
+ */
 public class Application extends javax.swing.JFrame {
     /**
 	 *
