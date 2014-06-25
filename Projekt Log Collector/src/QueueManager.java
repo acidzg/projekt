@@ -7,7 +7,6 @@ public class QueueManager extends Thread {
 	private Queue<Event> eventsQueue = new ConcurrentLinkedQueue<Event>();
 	OutputAdapter outputAdapter;
 
-
 	public QueueManager(OutputAdapter outputAdapter) {
 		this.outputAdapter = outputAdapter;
 	}
@@ -31,7 +30,7 @@ public class QueueManager extends Thread {
 			outputAdapter.storeEvents(batch);
 			System.out.println("Wyslano do zapisu " + batch.size() + " eventow");
 		}
-
+		
 		return true;
 	}
 

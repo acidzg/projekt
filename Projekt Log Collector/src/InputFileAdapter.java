@@ -106,10 +106,10 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	}
 
 	/**
-	 * wyciaga z parametru line Details logu i zwraca jako string.
+	 * wysiaga z parametru line Details logu i zwraca jako string.
 	 * @param
 	 * @return
-	 */
+	 */ 
 	private String getDetailsFromLine(String line) {
 		String regularExpDetails = "(.+)(INFO|WARNING|SEVERE|CONFIG|FINE|FINER|FINEST)(.+)";
 		return line.replaceAll(regularExpDetails, "$3");
@@ -140,7 +140,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	}
 
 	/**
-	 * uruchomienie aplikacji
+	 * chyba wszyscy wiedza co to jest;p.
 	 */
 	public final void run() {
 		while (true) {

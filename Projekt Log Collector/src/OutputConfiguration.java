@@ -7,9 +7,6 @@ public class OutputConfiguration {
 		this.databaseLogin = "admin";
 		this.databasePass = "h@rdp@ss";
 		this.databaseAddress = "";
-/**
- * konfiguracja danych wymaganych do zalogowania si na serwer.
- */
 	}
 
 	public OutputConfiguration(String databaseLogin, String databasePass, String databaseAddress) {
