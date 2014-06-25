@@ -6,24 +6,34 @@ import java.util.Properties;
 import javax.swing.JTextArea;
 
 public class ApplicationCore {
+    /**Rdzeñ aplikacji
+     */
 	private Configuration configuration;
 	private QueueManager queue;
 	private OutputDatabaseAdapter outputDatabaseAdapter;
 	InputFileAdapter inputFileAdapter;
+    /**
+     *adapter plików wejœciowych
+     *adapter plków bazy danych wyjœciowych
+     *menad¿er kolejki
+     *konfiguracja
+     */
 
 	public ApplicationCore(JTextArea guiConsole) {
 		configuration = readAndCreateConfiguration();
 		outputDatabaseAdapter = new OutputDatabaseAdapter();
 		queue = new QueueManager(outputDatabaseAdapter);
 		queue.start();
+	    /**tworzenie nowej kolejki **/
 		inputFileAdapter = new InputFileAdapter(guiConsole);
 		inputFileAdapter.start();
 		inputFileAdapter.connectToQueueManager(queue);
 		outputDatabaseAdapter.setupConfig(configuration);
 		inputFileAdapter.setupConfig(configuration);
-	} 
-	
+	}
+
 	public void stopApp() {
+	    /**funkcja sluzaca to zatrzymywania 	     */
 		outputDatabaseAdapter = null;
 		queue.stop();
 		queue = null;

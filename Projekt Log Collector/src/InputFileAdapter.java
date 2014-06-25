@@ -9,7 +9,10 @@ import javax.swing.JTextArea;
 
 @SuppressWarnings("unused")
 public class InputFileAdapter extends Thread implements InputAdapter {
-	
+    /**
+     *Wejœciowy adapter pliku
+     */
+
 	private Configuration configuration;
 	private QueueManager queue;
 	private BufferedReader bufferedReader;
@@ -33,11 +36,11 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 					"server.log.1");
 			bufferedReader = new BufferedReader(new InputStreamReader(
 					fileInputStream));
+		    /**
+		     *wczytywanie logów z pliku
+		     */
 			String line;
 			while ((line = bufferedReader.readLine()) != null) {
-				
-
-				// *********
 
 				if (!line.isEmpty()) {
 
@@ -51,8 +54,6 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 
 				}
 
-				// *********
-				
 				sleep(Application.READ_FILE_SLEEP_TIME);
 
 			}
@@ -109,10 +110,10 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	}
 
 	/**
-	 * wysiaga z parametru line Details logu i zwraca jako string.
+	 * wyciaga z parametru line Details logu i zwraca jako string.
 	 * @param
 	 * @return
-	 */ 
+	 */
 	public String getDetailsFromLine(String line) {
 		String regularExpDetails = "(.+)(INFO|WARNING|SEVERE|CONFIG|FINE|FINER|FINEST)(.+)";
 		return line.replaceAll(regularExpDetails, "$3");
@@ -121,7 +122,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 
 
 	/**
-	 * tworzenie nowego event.
+	 * tworzenie nowego eventu.
 	 * @return
 	 */
 	private Event createEvent() {
@@ -143,7 +144,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	}
 
 	/**
-	 * chyba wszyscy wiedza co to jest;p.
+	 * funkcja run
 	 */
 	public final void run() {
 		while (true) {
