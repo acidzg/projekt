@@ -9,4 +9,7 @@ public class Testowa {
 	//banann
 	//ko≈Çek
 	//so≥tys
+	//testowa 2
+	//dziala
+	
 }
