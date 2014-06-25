@@ -2,7 +2,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-
+/**
+ *w¹tek menad¿era kolejki
+ */
 public class QueueManager extends Thread {
 	private Queue<Event> eventsQueue = new ConcurrentLinkedQueue<Event>();
 	OutputAdapter outputAdapter;
@@ -10,7 +12,9 @@ public class QueueManager extends Thread {
 	public QueueManager(OutputAdapter outputAdapter) {
 		this.outputAdapter = outputAdapter;
 	}
-
+	/**
+	 *akceptowanie zdarzenia
+	 */
 	boolean acceptEvent(Event event) {
 		try {
 			if (eventsQueue.add(event)) {
@@ -21,7 +25,9 @@ public class QueueManager extends Thread {
 		}
 		return false;
 	}
-
+	/**
+	 *wysylanie zda¿enia
+	 */
 	boolean sendEvents() {
 		List<Event> batch = new LinkedList<Event>(eventsQueue);
 		eventsQueue.clear();
@@ -30,10 +36,12 @@ public class QueueManager extends Thread {
 			outputAdapter.storeEvents(batch);
 			System.out.println("Wyslano do zapisu " + batch.size() + " eventow");
 		}
-		
+
 		return true;
 	}
-
+    /**
+     *fukcja run w¹tku
+     */
 	public void run() {
 		while(true) {
 			sleep(Application.OUTPUT_SLEEP_TIME);

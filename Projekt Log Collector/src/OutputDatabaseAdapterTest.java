@@ -5,14 +5,16 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+/**
+ *test adaptera wychodz¹cego
+ */
 
 public class OutputDatabaseAdapterTest {
-	
+
 	private Configuration configuration;
 	private Event event;
 	private OutputDatabaseAdapter outputDatabaseAdapter;
-	
+
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -41,7 +43,7 @@ public class OutputDatabaseAdapterTest {
 		configuration = new Configuration();
 		outputDatabaseAdapter = new OutputDatabaseAdapter();
 		assertNotEquals(configuration, outputDatabaseAdapter);
-		
+
 	}
 
 	@Test
@@ -49,7 +51,7 @@ public class OutputDatabaseAdapterTest {
 		event = new Event();
 		outputDatabaseAdapter = new OutputDatabaseAdapter();
 		assertNotEquals(event, outputDatabaseAdapter);
-	
+
 
 	}
 

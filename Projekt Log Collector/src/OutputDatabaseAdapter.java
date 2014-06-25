@@ -29,7 +29,7 @@ public class OutputDatabaseAdapter implements OutputAdapter {
                             + event.getTimestamp()
                             + "\', \'" + event.getLogLevel() + "\', \'"
                             + event.getDetails() + "\');");
-                    
+
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -41,7 +41,9 @@ public class OutputDatabaseAdapter implements OutputAdapter {
         closeConnection();
         return flag;
     }
-
+    /**
+     *utworzenie polaczenia z baza
+     */
     private boolean openConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -50,6 +52,10 @@ public class OutputDatabaseAdapter implements OutputAdapter {
         }
         try {
             connection = DriverManager.getConnection(
+            	    /**
+            	     *uzywanie podanych w klasie OutputConfiguration danych logowania
+            	     *@see OutputConfiguration.java
+            	     */
                     configuration.outConf.databaseAddress,
                     configuration.outConf.databaseLogin,
                     configuration.outConf.databasePass);
@@ -62,10 +68,12 @@ public class OutputDatabaseAdapter implements OutputAdapter {
         }
         return false;
     }
-
+    /**
+     *zamykanie polaczenia z baz¹
+     */
     private void closeConnection() {
         try {
-            connection.close(); // closing a current connection
+            connection.close(); // zamykanie obecnego polaczenia
         } catch (SQLException e) {
             e.printStackTrace();
         }

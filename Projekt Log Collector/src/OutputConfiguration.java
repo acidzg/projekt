@@ -2,7 +2,9 @@ public class OutputConfiguration {
 	public final String databaseLogin;
 	public final String databasePass;
 	public final String databaseAddress;
-
+    /**
+     *konfiguracja wyjœciowa, wymagane login i haslo
+     */
 	public OutputConfiguration() {
 		this.databaseLogin = "admin";
 		this.databasePass = "h@rdp@ss";
