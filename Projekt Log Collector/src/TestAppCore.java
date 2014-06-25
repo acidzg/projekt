@@ -1,10 +1,16 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+/**
+ * 
+ * @author Bahyr
+ */
 
 public class TestAppCore {
 
@@ -61,29 +67,27 @@ public class TestAppCore {
 	}
 
 	@Test
-	public void getTimestamp()
-	{
+	public void getTimestamp() {
 		event = new Event();
-		
+
 		// test not Null returned value by function getTimestamp
-			assertNotNull(event.getTimestamp());
+		assertNotNull(event.getTimestamp());
 	}
-	
+
 	@Test
-	public void getLogLevel()
-	{
+	public void getLogLevel() {
 		event = new Event();
-		
+
 		// test not Null returned value by function getLogLevel
-			assertNotNull(event.getLogLevel());
+		assertNotNull(event.getLogLevel());
 	}
-	
+
 	@Test
-	public void getDetails()
-	{
+	public void getDetails() {
 		event = new Event();
-		
+
 		// test not Null returned value by function getDetails
 		assertNotNull(event.getDetails());
 	}
+
 }
