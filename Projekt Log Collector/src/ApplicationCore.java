@@ -8,12 +8,12 @@ import javax.swing.JTextArea;
 public class ApplicationCore {
 	private Configuration configuration;
 	private QueueManager queue;
-	private InputFileAdapter inputFileAdapter;
 	private OutputDatabaseAdapter outputDatabaseAdapter;
+	InputFileAdapter inputFileAdapter;
 
 	public ApplicationCore(JTextArea guiConsole) {
 		configuration = readAndCreateConfiguration();
-		//outputDatabaseAdapter = new OutputDatabaseAdapter();
+		outputDatabaseAdapter = new OutputDatabaseAdapter();
 		queue = new QueueManager(outputDatabaseAdapter);
 		queue.start();
 		inputFileAdapter = new InputFileAdapter(guiConsole);
@@ -22,6 +22,14 @@ public class ApplicationCore {
 		outputDatabaseAdapter.setupConfig(configuration);
 		inputFileAdapter.setupConfig(configuration);
 	} 
+	
+	public void stopApp() {
+		outputDatabaseAdapter = null;
+		queue.stop();
+		queue = null;
+		inputFileAdapter.stop();
+		inputFileAdapter = null;
+	}
 
 	private Configuration readAndCreateConfiguration() {
 		Properties properties = readConfigurationFromFile();

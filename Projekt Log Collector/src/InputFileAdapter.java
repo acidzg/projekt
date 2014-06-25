@@ -9,6 +9,7 @@ import javax.swing.JTextArea;
 
 @SuppressWarnings("unused")
 public class InputFileAdapter extends Thread implements InputAdapter {
+	
 	private Configuration configuration;
 	private QueueManager queue;
 	private BufferedReader bufferedReader;
@@ -34,7 +35,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 					fileInputStream));
 			String line;
 			while ((line = bufferedReader.readLine()) != null) {
-				sleep(1000);
+				
 
 				// *********
 
@@ -51,6 +52,8 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 				}
 
 				// *********
+				
+				sleep(Application.READ_FILE_SLEEP_TIME);
 
 			}
 		} catch (IOException e) {
@@ -62,7 +65,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	}
 
 	@SuppressWarnings("deprecation")
-	private Timestamp getDateFromline(String line) {
+	public Timestamp getDateFromline(String line) {
 		String regularExp = "(\\))(.+)";
 		String date = line.replaceAll(regularExp, "$1");
 
@@ -110,7 +113,7 @@ public class InputFileAdapter extends Thread implements InputAdapter {
 	 * @param
 	 * @return
 	 */ 
-	private String getDetailsFromLine(String line) {
+	public String getDetailsFromLine(String line) {
 		String regularExpDetails = "(.+)(INFO|WARNING|SEVERE|CONFIG|FINE|FINER|FINEST)(.+)";
 		return line.replaceAll(regularExpDetails, "$3");
 	}

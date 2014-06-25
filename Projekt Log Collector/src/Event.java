@@ -26,4 +26,16 @@ public class Event {
 	public void showEvent() {
 		System.out.println(timestamp+" "+logLevel+" "+details);
 	}
+	
+	public Timestamp getTimestamp() {
+		return timestamp;
+	}
+	
+	public Level getLogLevel() {
+		return logLevel;
+	}
+	
+	public String getDetails() {
+		return details;
+	}
 }

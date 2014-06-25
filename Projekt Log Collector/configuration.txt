@@ -1,4 +1,4 @@
 inFilePath = logs.txt
-outDatabaseLogin = login
-outDatabasePass = pass
-outDatabaseAddress = http://adres.pl
+outDatabaseLogin = padmin202
+outDatabasePass = 3c4a75
+outDatabaseAddress = jdbc:mysql://db4free.net
